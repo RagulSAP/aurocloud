@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AuroCloud Technologies — Build Beyond Limits</title>
+  <meta name="description" content="AuroCloud Technologies crafts exceptional mobile apps for Android & iOS, powerful web applications, and AI-powered solutions that transform businesses." />
+
+  <!-- Outfit font — Clockyn design system -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a href="#" class="logo" aria-label="AuroCloud Technologies">
+      <div class="logo-icon" aria-hidden="true">☁</div>
+      <span><span style="font-weight:800;">AuroCloud</span> <span style="font-weight:400;opacity:.55;font-size:.82em;letter-spacing:.01em;">Technologies</span></span>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#ai">AI Solutions</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="btn btn-primary nav-cta">Get Started</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+<!-- Mobile nav overlay -->
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Mobile navigation">
+  <button class="mobile-nav-close" id="mobileClose" aria-label="Close menu">✕</button>
+  <a href="#services">Services</a>
+  <a href="#ai">AI Solutions</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#team">Team</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="btn btn-primary" style="font-size:1rem;padding:.85rem 2rem">Get Started</a>
+</div>
+
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="home" aria-label="Hero">
+  <div class="container hero-content">
+    <!-- Left copy -->
+    <div class="hero-copy">
+      <div class="hero-badge" data-animate>
+        <span class="dot"></span>
+        Now building the future of apps
+      </div>
+
+      <h1 class="hero-title" data-animate data-delay="100">
+        Build Beyond<br/>
+        <span class="gradient-text">Limits with AI</span>
+      </h1>
+
+      <p class="hero-desc" data-animate data-delay="200">
+        AuroCloud Technologies crafts stunning mobile apps for Android &amp; iOS,
+        powerful web applications, and intelligent AI solutions that transform
+        how businesses operate and grow.
+      </p>
+
+      <div class="hero-actions" data-animate data-delay="300">
+        <a href="#services" class="btn btn-primary">
+          Explore Services
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="#portfolio" class="btn btn-outline">
+          View Our Work
+        </a>
+      </div>
+
+      <div class="hero-stats" data-animate data-delay="400">
+        <div class="stat">
+          <span class="stat-value" data-target="150" data-suffix="+">0+</span>
+          <span class="stat-label">Projects Delivered</span>
+        </div>
+        <div class="stat-sep" aria-hidden="true"></div>
+        <div class="stat">
+          <span class="stat-value" data-target="98" data-suffix="%">0%</span>
+          <span class="stat-label">Client Satisfaction</span>
+        </div>
+        <div class="stat-sep" aria-hidden="true"></div>
+        <div class="stat">
+          <span class="stat-value" data-target="40" data-suffix="+">0+</span>
+          <span class="stat-label">Team Members</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right visual -->
+    <div class="hero-visual" aria-hidden="true">
+      <!-- Graphite gradient panel -->
+      <div class="hero-visual-bg"></div>
+
+      <div class="hero-phone-mockup">
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <div class="phone-app-row">
+              <div class="phone-app-icon">📱</div>
+              <div class="phone-app-icon">🤖</div>
+              <div class="phone-app-icon">⚡</div>
+              <div class="phone-app-icon">💹</div>
+              <div class="phone-app-icon">🌐</div>
+              <div class="phone-app-icon">✨</div>
+            </div>
+            <div class="phone-chart">
+              <span style="font-size:.65rem;color:rgba(255,255,255,.35);font-weight:600;letter-spacing:.08em;">ANALYTICS</span>
+              <div class="chart-bars">
+                <div class="bar" style="height:40%;animation-delay:.1s"></div>
+                <div class="bar" style="height:65%;animation-delay:.2s"></div>
+                <div class="bar" style="height:50%;animation-delay:.3s"></div>
+                <div class="bar" style="height:80%;animation-delay:.4s"></div>
+                <div class="bar" style="height:60%;animation-delay:.5s"></div>
+                <div class="bar" style="height:90%;animation-delay:.6s"></div>
+                <div class="bar" style="height:70%;animation-delay:.7s"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating cards -->
+        <div class="float-card">
+          <span class="float-card-icon">🤖</span>
+          <span>AI Model Deployed</span>
+        </div>
+        <div class="float-card">
+          <span class="float-card-icon">📲</span>
+          <span>App Store: 4.9★</span>
+        </div>
+        <div class="float-card">
+          <span class="float-card-icon">🚀</span>
+          <span>99.9% Uptime</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SERVICES
+     ============================================================ -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="text-center" data-animate>
+      <span class="section-label">What We Build</span>
+      <h2 class="section-title">End-to-End Digital Solutions</h2>
+      <p class="section-sub">
+        From concept to deployment, we deliver best-in-class software products
+        that drive real business results.
+      </p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card" data-animate data-delay="100">
+        <div class="service-icon">🤖</div>
+        <h3 class="service-title">Android Development</h3>
+        <p class="service-desc">
+          Native Android apps built with Kotlin and Jetpack Compose — blazing fast,
+          pixel-perfect, and fully optimised for the Google Play ecosystem.
+        </p>
+        <ul class="service-features">
+          <li>Kotlin &amp; Jetpack Compose</li>
+          <li>Material Design 3</li>
+          <li>Google Play deployment</li>
+          <li>Offline-first architecture</li>
+        </ul>
+      </div>
+
+      <div class="service-card" data-animate data-delay="200">
+        <div class="service-icon">🍎</div>
+        <h3 class="service-title">iOS Development</h3>
+        <p class="service-desc">
+          Polished iOS applications using Swift and SwiftUI that feel at home on
+          every Apple device — iPhone, iPad, Apple Watch, and beyond.
+        </p>
+        <ul class="service-features">
+          <li>Swift &amp; SwiftUI</li>
+          <li>Apple HIG compliance</li>
+          <li>App Store Connect</li>
+          <li>Apple Silicon optimised</li>
+        </ul>
+      </div>
+
+      <div class="service-card" data-animate data-delay="300">
+        <div class="service-icon">🌐</div>
+        <h3 class="service-title">Web Application</h3>
+        <p class="service-desc">
+          Scalable web apps using React, Next.js, and cloud-native backends —
+          designed to handle millions of users with elegant simplicity.
+        </p>
+        <ul class="service-features">
+          <li>React / Next.js / Vue</li>
+          <li>REST &amp; GraphQL APIs</li>
+          <li>Cloud-native deployment</li>
+          <li>Accessibility-first (WCAG)</li>
+        </ul>
+      </div>
+
+      <div class="service-card" data-animate data-delay="100">
+        <div class="service-icon">✨</div>
+        <h3 class="service-title">AI &amp; Machine Learning</h3>
+        <p class="service-desc">
+          Integrate cutting-edge AI into your products — from LLM-powered chatbots
+          and recommendation engines to computer vision and predictive analytics.
+        </p>
+        <ul class="service-features">
+          <li>LLM &amp; RAG pipelines</li>
+          <li>Computer Vision</li>
+          <li>Predictive analytics</li>
+          <li>AI model fine-tuning</li>
+        </ul>
+      </div>
+
+      <div class="service-card" data-animate data-delay="200">
+        <div class="service-icon">☁️</div>
+        <h3 class="service-title">Cloud &amp; DevOps</h3>
+        <p class="service-desc">
+          Infrastructure that scales effortlessly. We architect, migrate, and
+          manage cloud environments on AWS, Azure, and GCP.
+        </p>
+        <ul class="service-features">
+          <li>AWS / Azure / GCP</li>
+          <li>Kubernetes &amp; Docker</li>
+          <li>CI/CD pipelines</li>
+          <li>24/7 monitoring</li>
+        </ul>
+      </div>
+
+      <div class="service-card" data-animate data-delay="300">
+        <div class="service-icon">🎨</div>
+        <h3 class="service-title">UI/UX Design</h3>
+        <p class="service-desc">
+          User experiences that delight. Our design team crafts intuitive interfaces
+          backed by research, prototyped in Figma, and tested with real users.
+        </p>
+        <ul class="service-features">
+          <li>UX research &amp; strategy</li>
+          <li>Figma prototyping</li>
+          <li>Design systems</li>
+          <li>Usability testing</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     AI SECTION
+     ============================================================ -->
+<section class="section ai-section" id="ai">
+  <div class="container ai-inner">
+
+    <!-- Graphite card visual -->
+    <div class="ai-visual" aria-hidden="true">
+      <div class="ai-orb">
+        <div class="ai-orb-inner">🧠</div>
+      </div>
+    </div>
+
+    <!-- Copy -->
+    <div>
+      <span class="section-label" data-animate>Intelligence Layer</span>
+      <h2 class="section-title" data-animate data-delay="100">
+        AI That Works<br/>For Your Business
+      </h2>
+      <p class="section-sub" data-animate data-delay="200">
+        We embed intelligence into every layer of your product — making apps
+        smarter, workflows faster, and customer experiences unforgettable.
+      </p>
+
+      <div class="ai-features">
+        <div class="ai-feature" data-animate data-delay="100">
+          <div class="ai-feature-icon">💬</div>
+          <div class="ai-feature-text">
+            <h4>Conversational AI</h4>
+            <p>LLM-powered chatbots and virtual assistants trained on your data, integrated directly into your mobile and web apps.</p>
+          </div>
+        </div>
+        <div class="ai-feature" data-animate data-delay="200">
+          <div class="ai-feature-icon">👁️</div>
+          <div class="ai-feature-text">
+            <h4>Computer Vision</h4>
+            <p>Object detection, image classification, OCR, and AR overlays — turning cameras into intelligent sensors.</p>
+          </div>
+        </div>
+        <div class="ai-feature" data-animate data-delay="300">
+          <div class="ai-feature-icon">📊</div>
+          <div class="ai-feature-text">
+            <h4>Predictive Analytics</h4>
+            <p>Forecast trends, detect anomalies, and surface insights automatically so your team can act before problems arise.</p>
+          </div>
+        </div>
+        <div class="ai-feature" data-animate data-delay="400">
+          <div class="ai-feature-icon">🔒</div>
+          <div class="ai-feature-text">
+            <h4>Responsible AI</h4>
+            <p>Explainable models, bias auditing, and privacy-preserving techniques — AI you can trust and explain to your users.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PROCESS
+     ============================================================ -->
+<section class="section process" id="process">
+  <div class="container">
+    <div class="text-center" data-animate>
+      <span class="section-label">Our Approach</span>
+      <h2 class="section-title">How We Deliver</h2>
+      <p class="section-sub">
+        A battle-tested process refined across 150+ projects, designed to bring
+        your vision to life on time and on budget.
+      </p>
+    </div>
+
+    <div class="process-steps">
+      <div class="step" data-animate data-delay="100">
+        <div class="step-number">01</div>
+        <span class="step-label">Discovery</span>
+        <h3 class="step-title">Define &amp; Plan</h3>
+        <p class="step-desc">Deep-dive workshops to understand your goals, users, and constraints. We produce a clear product blueprint.</p>
+      </div>
+      <div class="step" data-animate data-delay="200">
+        <div class="step-number">02</div>
+        <span class="step-label">Design</span>
+        <h3 class="step-title">Prototype &amp; Validate</h3>
+        <p class="step-desc">Figma prototypes tested with real users. We iterate fast so there are no surprises in development.</p>
+      </div>
+      <div class="step" data-animate data-delay="300">
+        <div class="step-number">03</div>
+        <span class="step-label">Build</span>
+        <h3 class="step-title">Engineer &amp; Integrate</h3>
+        <p class="step-desc">Agile sprints with daily standups. Continuous delivery means you see progress from week one.</p>
+      </div>
+      <div class="step" data-animate data-delay="400">
+        <div class="step-number">04</div>
+        <span class="step-label">Launch</span>
+        <h3 class="step-title">Deploy &amp; Scale</h3>
+        <p class="step-desc">Rigorous QA, app store submission, and cloud deployment — followed by ongoing support and growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TECH STACK
+     ============================================================ -->
+<section class="section" id="tech" style="padding-bottom:60px;">
+  <div class="container">
+    <div class="text-center" data-animate>
+      <span class="section-label">Technology</span>
+      <h2 class="section-title">Our Tech Arsenal</h2>
+      <p class="section-sub">
+        We pick the best tool for the job — battle-tested technologies that
+        deliver performance, reliability, and developer happiness.
+      </p>
+    </div>
+  </div>
+
+  <div class="tech-track-wrap" data-animate data-delay="200">
+    <div class="tech-track" aria-label="Technology stack">
+      <div class="tech-pill"><span class="tech-pill-icon">⚛️</span> React</div>
+      <div class="tech-pill"><span class="tech-pill-icon">🔺</span> Next.js</div>
+      <div class="tech-pill"><span class="tech-pill-icon">📱</span> React Native</div>
+      <div class="tech-pill"><span class="tech-pill-icon">🤖</span> Kotlin</div>
+      <div class="tech-pill"><span class="tech-pill-icon">🍎</span> Swift</div>
+      <div class="tech-pill"><span class="tech-pill-icon">🐍</span> Python</div>
+      <div class="tech-pill"><span class="tech-pill-icon">☁️</span> AWS</div>
+      <div class="tech-pill"><span class="tech-pill-icon">🔵</span> Azure</div>
+      <div class="tech-pill"><span class="tech-pill-icon">🐳</span> Docker</div>
+      <div class="tech-pill"><span class="tech-pill-icon">☸️</span> Kubernetes</div>
+      <div class="tech-pill"><span class="tech-pill-icon">🧠</span> OpenAI / Claude</div>
+      <div class="tech-pill"><span class="tech-pill-icon">🔥</span> Firebase</div>
+      <div class="tech-pill"><span class="tech-pill-icon">🗄️</span> PostgreSQL</div>
+      <div class="tech-pill"><span class="tech-pill-icon">📡</span> GraphQL</div>
+      <div class="tech-pill"><span class="tech-pill-icon">⚡</span> Node.js</div>
+      <div class="tech-pill"><span class="tech-pill-icon">🎨</span> Figma</div>
+      <!-- Duplicate for seamless scroll -->
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">⚛️</span> React</div>
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">🔺</span> Next.js</div>
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">📱</span> React Native</div>
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">🤖</span> Kotlin</div>
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">🍎</span> Swift</div>
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">🐍</span> Python</div>
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">☁️</span> AWS</div>
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">🔵</span> Azure</div>
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">🐳</span> Docker</div>
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">☸️</span> Kubernetes</div>
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">🧠</span> OpenAI / Claude</div>
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">🔥</span> Firebase</div>
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">🗄️</span> PostgreSQL</div>
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">📡</span> GraphQL</div>
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">⚡</span> Node.js</div>
+      <div class="tech-pill" aria-hidden="true"><span class="tech-pill-icon">🎨</span> Figma</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     PORTFOLIO
+     ============================================================ -->
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+    <div class="text-center" data-animate>
+      <span class="section-label">Our Work</span>
+      <h2 class="section-title">What We've Built</h2>
+      <p class="section-sub">
+        Real products shipped by our team — crafted with care, built to scale.
+      </p>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <!-- Clockyn — flagship product, full-width -->
+      <div class="project-card" data-animate data-delay="100" style="grid-column: 1 / -1;">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#F0F4FF 0%,#E8EEFF 100%);display:flex;align-items:center;justify-content:center;padding:1rem;">
+          <img src="assets/clockyn-logo.png" alt="Clockyn" style="height:170px;width:auto;object-fit:contain;">
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">Web App</span>
+            <span class="tag">Mobile</span>
+            <span class="tag">Our Product</span>
+          </div>
+          <h3 class="project-title">Clockyn — Workforce Management Platform</h3>
+          <p class="project-desc">Clockyn is AuroCloud's flagship in-house product — a modern workforce management platform that lets businesses track time, manage attendance, and run payroll seamlessly. Built for the Indian market with geo-based attendance, smart scheduling, and integrated pay processing.</p>
+        </div>
+      </div>
+
+      <!-- AI teaser card -->
+      <div class="project-card" data-animate data-delay="200" style="border-style:dashed;">
+        <div class="project-thumb" style="background:linear-gradient(145deg,#2E2E31 0%,#0F0F10 100%);position:relative;">
+          <span style="font-size:3.5rem;">🚀</span>
+          <span style="position:absolute;top:12px;right:14px;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:4px 10px;border-radius:50px;background:rgba(6,194,112,0.15);color:#34E3A5;border:1px solid rgba(6,194,112,0.3);">Coming Soon</span>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag" style="background:var(--clr-accent-soft);color:#1a7a4a;border-color:rgba(6,194,112,0.25);">AI-Powered</span>
+            <span class="tag">New Product</span>
+          </div>
+          <h3 class="project-title">Something Big Is Coming with AI</h3>
+          <p class="project-desc">We're building something new — an AI-native product that pushes the boundaries of what's possible. Details coming soon. Stay tuned.</p>
+        </div>
+      </div>
+
+      <!-- Future projects placeholder -->
+      <div class="project-card" data-animate data-delay="300" style="border-style:dashed;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem;text-align:center;min-height:220px;">
+        <div style="font-size:2rem;margin-bottom:1rem;opacity:0.3;color:var(--clr-text);">+</div>
+        <h3 class="project-title" style="color:var(--clr-muted);">Your Project Here</h3>
+        <p class="project-desc" style="font-size:.85rem;margin-top:.4rem;">We're always building something new. <a href="#contact" style="color:var(--clr-accent);text-decoration:none;font-weight:600;">Start a project →</a></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TEAM
+     ============================================================ -->
+<section class="section" id="team" style="background:var(--clr-bg2);">
+  <div class="container">
+    <div class="text-center" data-animate>
+      <span class="section-label">The Team</span>
+      <h2 class="section-title">People Behind the Magic</h2>
+      <p class="section-sub">
+        A multidisciplinary team of engineers, designers, and AI researchers —
+        united by the drive to build products that matter.
+      </p>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="team-card" data-animate data-delay="100">
+        <div class="team-avatar">👨‍💼</div>
+        <div class="team-name"><!-- CEO Name --></div>
+        <div class="team-role">Chief Executive Officer</div>
+        <div class="team-socials">
+          <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+        </div>
+      </div>
+
+      <div class="team-card" data-animate data-delay="200">
+        <div class="team-avatar">👩‍💻</div>
+        <div class="team-name"><!-- CTO Name --></div>
+        <div class="team-role">Chief Technology Officer</div>
+        <div class="team-socials">
+          <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-btn" aria-label="GitHub">gh</a>
+        </div>
+      </div>
+
+      <div class="team-card" data-animate data-delay="300">
+        <div class="team-avatar">👨‍🎨</div>
+        <div class="team-name"><!-- Design Lead Name --></div>
+        <div class="team-role">Head of Design</div>
+        <div class="team-socials">
+          <a href="#" class="social-btn" aria-label="Dribbble">dr</a>
+          <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+
+      <div class="team-card" data-animate data-delay="400">
+        <div class="team-avatar">👩‍🔬</div>
+        <div class="team-name"><!-- AI Lead Name --></div>
+        <div class="team-role">Head of AI &amp; ML</div>
+        <div class="team-socials">
+          <a href="#" class="social-btn" aria-label="Scholar">gs</a>
+          <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center" style="margin-top:2.5rem;font-size:.9rem;color:var(--clr-muted);" data-animate data-delay="500">
+      Team bios and photos coming soon. &nbsp;·&nbsp;
+      <a href="#contact" style="color:var(--clr-accent);text-decoration:none;font-weight:600;">Join our team →</a>
+    </p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CTA BANNER
+     ============================================================ -->
+<section class="section" id="cta">
+  <div class="container">
+    <div class="cta-banner" data-animate>
+      <div class="cta-banner-content">
+        <h2 class="cta-title">Ready to Build Something Remarkable?</h2>
+        <p class="cta-sub">Tell us your vision — we'll make it reality. Free discovery call, no commitment required.</p>
+        <div class="cta-actions">
+          <a href="#contact" class="btn btn-primary">Start a Project</a>
+          <a href="#portfolio" class="btn btn-outline">See Our Work</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="text-center" data-animate style="margin-bottom:3.5rem;">
+      <span class="section-label">Get In Touch</span>
+      <h2 class="section-title">Let's Build Together</h2>
+      <p class="section-sub">
+        Have a project in mind? Drop us a message and our team will get back
+        to you within 24 hours.
+      </p>
+    </div>
+
+    <div class="contact-inner">
+      <!-- Info -->
+      <div class="contact-info">
+        <div class="contact-item" data-animate data-delay="100">
+          <div class="contact-item-icon">📍</div>
+          <div>
+            <div class="contact-item-label">Office</div>
+            <div class="contact-item-value"><!-- Your City, Country --></div>
+          </div>
+        </div>
+        <div class="contact-item" data-animate data-delay="200">
+          <div class="contact-item-icon">📧</div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">hello@aurocloud.tech</div>
+          </div>
+        </div>
+        <div class="contact-item" data-animate data-delay="300">
+          <div class="contact-item-icon">📞</div>
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value"><!-- Your Phone --></div>
+          </div>
+        </div>
+        <div class="contact-item" data-animate data-delay="400">
+          <div class="contact-item-icon">🕐</div>
+          <div>
+            <div class="contact-item-label">Response Time</div>
+            <div class="contact-item-value">Within 24 hours</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form class="contact-form" id="contactForm" novalidate data-animate data-delay="200">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="John" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Doe" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="john@company.com" required />
+        </div>
+        <div class="form-group">
+          <label for="service">Service Interested In</label>
+          <select id="service" name="service">
+            <option value="">Select a service…</option>
+            <option>Android Development</option>
+            <option>iOS Development</option>
+            <option>Web Application</option>
+            <option>AI &amp; Machine Learning</option>
+            <option>Cloud &amp; DevOps</option>
+            <option>UI/UX Design</option>
+            <option>Full Product Build</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell Us About Your Project</label>
+          <textarea id="message" name="message" rows="5" placeholder="Describe your idea, goals, timeline, and any technical requirements…" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:1rem;">
+          Send Message →
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <a href="#" class="logo" aria-label="AuroCloud Technologies">
+          <div class="logo-icon" aria-hidden="true">☁</div>
+          <span><span style="font-weight:800;">AuroCloud</span> <span style="font-weight:400;opacity:.55;font-size:.82em;letter-spacing:.01em;">Technologies</span></span>
+        </a>
+        <p>Building exceptional mobile, web, and AI-powered products that help businesses grow beyond boundaries.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-btn" aria-label="Twitter">𝕏</a>
+          <a href="#" class="social-btn" aria-label="GitHub">gh</a>
+          <a href="#" class="social-btn" aria-label="Dribbble">dr</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Services</div>
+        <ul class="footer-links" role="list">
+          <li><a href="#services">Android Development</a></li>
+          <li><a href="#services">iOS Development</a></li>
+          <li><a href="#services">Web Applications</a></li>
+          <li><a href="#ai">AI &amp; Machine Learning</a></li>
+          <li><a href="#services">Cloud &amp; DevOps</a></li>
+          <li><a href="#services">UI/UX Design</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links" role="list">
+          <li><a href="#team">About Us</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#portfolio">Case Studies</a></li>
+          <li><a href="#contact">Careers</a></li>
+          <li><a href="#contact">Blog</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links" role="list">
+          <li><a href="mailto:hello@aurocloud.tech">hello@aurocloud.tech</a></li>
+          <li><a href="#contact">Start a Project</a></li>
+          <li><a href="#contact">Partner With Us</a></li>
+          <li><a href="#contact">Press &amp; Media</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 AuroCloud Technologies. All rights reserved.</p>
+      <ul class="footer-legal" role="list">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
