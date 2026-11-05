@@ -202,13 +202,11 @@ body {
   color: var(--clr-text);
   letter-spacing: -.01em;
 }
-.logo-icon {
-  width: 32px; height: 32px;
-  border-radius: var(--radius-sm);
-  background: var(--clr-primary);
-  color: var(--clr-on-primary);
-  display: flex; align-items: center; justify-content: center;
-  font-size: .95rem;
+.logo-banner {
+  height: 60px;
+  width: auto;
+  display: block;
+  border-radius: 6px;
 }
 .logo > span:last-child {
   color: var(--clr-muted);
@@ -958,6 +956,68 @@ body {
 .form-group input::placeholder,
 .form-group textarea::placeholder { color: var(--clr-muted); opacity: .6; }
 .form-group select option { background: var(--clr-surface); color: var(--clr-text); }
+
+/* ============================================
+   AWS SECTION
+   ============================================ */
+.aws-section {
+  background: var(--clr-bg2);
+}
+.aws-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+.aws-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-top: 2px solid var(--clr-accent);
+  border-radius: var(--radius-md);
+  padding: 1.6rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.aws-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.aws-card-icon {
+  font-size: 1.75rem;
+  margin-bottom: .75rem;
+}
+.aws-card-title {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--clr-text);
+  margin: 0 0 .4rem;
+}
+.aws-card-desc {
+  font-size: .82rem;
+  color: var(--clr-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .aws-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+  .aws-grid { grid-template-columns: 1fr; }
+}
+
+/* Highlighted tech pill for AWS Bedrock */
+.tech-pill-highlight {
+  background: var(--clr-accent-soft);
+  border-color: rgba(6, 194, 112, 0.35);
+  color: var(--clr-text);
+  font-weight: 600;
+}
+@media (prefers-color-scheme: dark) {
+  .tech-pill-highlight {
+    background: rgba(52, 227, 165, 0.12);
+    border-color: rgba(52, 227, 165, 0.3);
+    color: #34E3A5;
+  }
+}
 
 /* ============================================
    FOOTER
