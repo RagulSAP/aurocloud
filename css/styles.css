@@ -726,6 +726,16 @@ body {
   box-shadow: var(--shadow-md);
 }
 .tech-pill-icon { font-size: 1rem; }
+.tech-pill-img {
+  width: 1.1rem; height: 1.1rem;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+.tech-pill-img.icon-si { filter: grayscale(1) brightness(0.3); }
+@media (prefers-color-scheme: dark) {
+  .tech-pill-img.icon-si { filter: grayscale(1) brightness(0) invert(1) opacity(0.75); }
+}
 
 /* ============================================
    PORTFOLIO
@@ -956,6 +966,52 @@ body {
 .form-group input::placeholder,
 .form-group textarea::placeholder { color: var(--clr-muted); opacity: .6; }
 .form-group select option { background: var(--clr-surface); color: var(--clr-text); }
+
+/* ============================================
+   FEATHER ICON SIZING
+   ============================================ */
+.service-icon svg {
+  width: 1.4rem; height: 1.4rem;
+  stroke: var(--clr-text); stroke-width: 1.5; fill: none;
+}
+.ai-feature-icon { font-size: 0; }
+.ai-feature-icon svg {
+  width: 1.2rem; height: 1.2rem;
+  stroke: var(--clr-text); stroke-width: 1.5; fill: none;
+}
+.contact-item-icon svg {
+  width: 1.2rem; height: 1.2rem;
+  stroke: var(--clr-accent); stroke-width: 1.5; fill: none;
+}
+.aws-card-icon { font-size: 0; }
+.aws-card-icon svg {
+  width: 1.6rem; height: 1.6rem;
+  stroke: var(--clr-accent); stroke-width: 1.5; fill: none;
+}
+.ai-orb-inner { font-size: 0; }
+.ai-orb-inner svg {
+  width: 2.75rem; height: 2.75rem;
+  stroke: #34E3A5; stroke-width: 1.5; fill: none;
+}
+.team-avatar { font-size: 0; }
+.team-avatar svg {
+  width: 2rem; height: 2rem;
+  stroke: var(--clr-muted); stroke-width: 1.5; fill: none;
+}
+.float-card-icon { display: flex; align-items: center; }
+.float-card-icon svg {
+  width: 1rem; height: 1rem;
+  stroke: var(--clr-text); stroke-width: 2; fill: none;
+}
+.phone-app-icon { display: flex; align-items: center; justify-content: center; }
+.phone-app-icon svg {
+  width: 1.1rem; height: 1.1rem;
+  stroke: rgba(255,255,255,0.65); stroke-width: 1.5; fill: none;
+}
+.portfolio-ai-icon {
+  width: 3.5rem; height: 3.5rem;
+  stroke: #34E3A5 !important; stroke-width: 1 !important; fill: none !important;
+}
 
 /* ============================================
    AWS SECTION

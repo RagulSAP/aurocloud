@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AWUS036ACH + Kali Linux: Setup & Driver Guide</title>
+<style>
+  :root {
+    --bg: #0f1410;
+    --panel: #161d18;
+    --panel-border: #263229;
+    --text: #e7ece8;
+    --text-dim: #9fb0a4;
+    --accent: #5fd48a;
+    --accent-dim: #2c6b47;
+    --warn-bg: #2a1f12;
+    --warn-border: #7a5420;
+    --warn-text: #e8c98a;
+    --code-bg: #0b0f0c;
+    --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.6;
+  }
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+  header.hero {
+    border-bottom: 1px solid var(--panel-border);
+    padding-bottom: 32px;
+    margin-bottom: 40px;
+  }
+  header.hero .kicker {
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  header.hero h1 {
+    font-size: 32px;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+  header.hero p {
+    color: var(--text-dim);
+    font-size: 16px;
+    max-width: 60ch;
+    margin: 0;
+  }
+  .scope-box {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 40px;
+  }
+  .scope-box h2 {
+    font-size: 14px;
+    text-transform: none;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+  .scope-box ul {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--text-dim);
+  }
+  .scope-box li { margin-bottom: 4px; }
+  .scope-box .not-covered {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--panel-border);
+    color: var(--text-dim);
+    font-size: 14px;
+  }
+  section.step {
+    margin-bottom: 48px;
+  }
+  section.step h2 {
+    font-size: 22px;
+    margin: 0 0 6px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  section.step h2 .num {
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 700;
+  }
+  section.step .lede {
+    color: var(--text-dim);
+    margin-bottom: 18px;
+    font-size: 15px;
+  }
+  .sub {
+    font-size: 16px;
+    margin: 22px 0 8px;
+    color: var(--text);
+  }
+  p { margin: 0 0 14px; }
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 6px;
+    padding: 14px 16px;
+    overflow-x: auto;
+    margin: 0 0 16px;
+  }
+  code {
+    font-family: var(--mono);
+    font-size: 13.5px;
+  }
+  p code, li code {
+    background: var(--code-bg);
+    padding: 1px 5px;
+    border-radius: 3px;
+    border: 1px solid var(--panel-border);
+  }
+  .note {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    color: var(--warn-text);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 14px;
+    margin: 0 0 16px;
+  }
+  .note strong { color: #f2daa0; }
+  .checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+  }
+  .checklist li {
+    padding-left: 28px;
+    position: relative;
+    margin-bottom: 8px;
+    color: var(--text-dim);
+  }
+  .checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  a { color: var(--accent); }
+  .handoff {
+    background: var(--panel);
+    border: 1px solid var(--accent-dim);
+    border-radius: 8px;
+    padding: 24px;
+    margin-top: 12px;
+  }
+  .handoff h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: var(--accent);
+  }
+  .handoff ol { padding-left: 20px; color: var(--text-dim); }
+  .handoff ol li { margin-bottom: 10px; }
+  .handoff .link-box {
+    margin-top: 18px;
+    padding: 14px 16px;
+    background: var(--code-bg);
+    border-radius: 6px;
+    border: 1px solid var(--panel-border);
+  }
+  .link-box a { word-break: break-all; }
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--panel-border);
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #faf9f6;
+      --panel: #ffffff;
+      --panel-border: #e3e0d8;
+      --text: #1d231e;
+      --text-dim: #5a6459;
+      --accent: #1f7a46;
+      --accent-dim: #bfe3cc;
+      --warn-bg: #fbf2de;
+      --warn-border: #e0bf7a;
+      --warn-text: #6b4e13;
+      --code-bg: #f1efe9;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="kicker">HOME LAB SETUP</div>
+    <h1>AWUS036ACH + Kali Linux</h1>
+    <p>Getting your adapter installed, recognized, and verified in monitor mode — the part that actually trips people up with this card.</p>
+  </header>
+
+  <div class="scope-box">
+    <h2>What this guide covers</h2>
+    <ul>
+      <li>Choosing how to run Kali (VM vs. bare metal vs. live USB) for this adapter</li>
+      <li>Installing VMware Workstation on Windows and creating the Kali VM</li>
+      <li>Installing Kali Linux</li>
+      <li>Installing the correct RTL8812AU driver (the stock kernel one is unreliable for this card)</li>
+      <li>Verifying monitor mode and packet injection actually work</li>
+    </ul>
+    <div class="not-covered">
+      This does not cover capturing a handshake or cracking a password. That workflow changes syntax across tool versions, so you're better served by the maintained official documentation — linked at the bottom once your adapter is confirmed working.
+    </div>
+  </div>
+
+  <section class="step">
+    <h2><span class="num">STEP 1</span> Pick how you'll run Kali</h2>
+    <p class="lede">This decision affects whether the adapter works at all, so make it first.</p>
+
+    <div class="note">
+      <strong>USB adapters and virtual machines don't mix well by default.</strong> A VM only sees USB devices if its hypervisor passes them through, and passthrough can introduce enough latency or packet handling overhead to make injection flaky or fail outright. Bare metal or a live USB gives the adapter direct access to the kernel driver.
+    </div>
+
+    <p class="sub">Your three options:</p>
+    <ul class="checklist">
+      <li><strong>Bare metal install</strong> — most reliable for monitor mode/injection. Needs a spare laptop or dedicated partition.</li>
+      <li><strong>Live USB (persistent)</strong> — boot Kali from a USB stick without touching your main OS. Good middle ground, slight performance cost on every boot.</li>
+      <li><strong>Virtual machine (VirtualBox/VMware) with USB passthrough</strong> — most convenient, least reliable for this specific use case. Workable for learning the OS and tools, but expect possible injection issues.</li>
+    </ul>
+    <p>If your goal is a working audit setup rather than just poking around Kali, use bare metal or a persistent live USB.</p>
+  </section>
+
+  <section class="step">
+    <h2><span class="num">STEP 1B</span> Install VMware Workstation on Windows</h2>
+    <p class="lede">Since you're on Windows and going the VM route — here's that setup, plus the USB passthrough config the adapter needs.</p>
+
+    <p class="sub">Download and install VMware Workstation Pro</p>
+    <p>Broadcom made Workstation Pro free for personal use. Get it from the official page: <a href="https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion" target="_blank" rel="noopener">vmware.com/products/desktop-hypervisor/workstation-and-fusion</a> (look for "Workstation Pro" under the Windows downloads, sign up for a free Broadcom account if prompted).</p>
+    <p>Run the installer, accept defaults, and reboot if it asks to. If you have Hyper-V, WSL2, or "Memory Integrity / Core Isolation" enabled in Windows, VMware may warn about conflicts — those features compete with VMware's own hypervisor. Easiest fix: disable Hyper-V and Core Isolation for this use case:</p>
+    <pre><code>REM Run in an elevated Command Prompt
+dism.exe /Online /Disable-Feature:Microsoft-Hyper-V /All
+bcdedit /set hypervisorlaunchtype off</code></pre>
+    <p>Then reboot. (Windows Security → Device Security → Core Isolation → turn off Memory Integrity, also reboot.)</p>
+
+    <p class="sub">Create the Kali VM</p>
+    <ul class="checklist">
+      <li>Open VMware Workstation → "Create a New Virtual Machine" → Typical</li>
+      <li>Point it at the Kali ISO you'll download in Step 2 (VMware can auto-detect it, but choose "I will install the operating system later" if it misdetects the Linux version — select "Debian 12.x 64-bit" manually, since Kali is Debian-based)</li>
+      <li>Allocate at least 60GB disk, 4GB+ RAM, 2+ CPU cores</li>
+      <li>Finish, then edit VM settings before first boot: remove the default USB controller version mismatch issues by setting <strong>USB Compatibility to USB 3.1</strong> under VM Settings → USB Controller — this matters because the AWUS036ACH is a USB 3.0 device and will misbehave under USB 2.0 emulation</li>
+    </ul>
+
+    <div class="note">
+      <strong>Install VMware Tools inside Kali after the OS install (Step 2)</strong> — <code>sudo apt install -y open-vm-tools open-vm-tools-desktop</code> — this improves USB handling, clipboard sharing, and display scaling.
+    </div>
+
+    <p class="sub">Pass the adapter through to the VM</p>
+    <p>Plug the AWUS036ACH into a USB 3.0 port on the Windows host. With the Kali VM running, go to VMware's VM menu → <strong>Removable Devices</strong> → look for the Realtek/RTL8812AU entry → <strong>Connect (Disconnect from Host)</strong>. This hands the raw USB device to the VM; Windows will no longer see it until you disconnect it back.</p>
+    <p>Inside Kali, confirm it arrived:</p>
+    <pre><code>lsusb</code></pre>
+    <p>If it doesn't show up, check VM Settings → USB Controller is set to USB 3.1 (not 2.0), and that Windows' own WiFi driver for the adapter isn't holding onto it — unplug and replug after connecting it to the VM if needed.</p>
+
+    <div class="note">
+      <strong>Reminder from earlier:</strong> USB passthrough on a VM is the least reliable path for monitor mode and injection specifically. If Step 4's injection test fails consistently and you've ruled out the driver, that's usually the passthrough layer adding overhead the real hardware wouldn't have — bare metal or a live USB are the fallback if this becomes a wall.
+    </div>
+  </section>
+
+  <section class="step">
+    <h2><span class="num">STEP 2</span> Install Kali Linux</h2>
+
+    <p class="sub">Download</p>
+    <p>Get the image from the official source only: <a href="https://www.kali.org/get-kali/" target="_blank" rel="noopener">kali.org/get-kali</a>. Since you're installing into a VMware VM, grab the <strong>"Installer" ISO</strong> (not the pre-built VM image — building it yourself in Step 1B gives you control over the USB controller setting that matters for this adapter).</p>
+    <ul class="checklist">
+      <li>"Installer" image for bare metal</li>
+      <li>"Live" image for a USB stick</li>
+      <li>"Virtual Machines" pre-built image for VirtualBox/VMware (saves you the install step, but see the passthrough caveat above)</li>
+    </ul>
+
+    <p class="sub">Verify the download (don't skip this)</p>
+    <p>Kali images are a common target for tampered downloads. Check the SHA256 sum against the value published on the Kali site:</p>
+    <pre><code>sha256sum kali-linux-2026.X-installer-amd64.iso</code></pre>
+
+    <p class="sub">Write it to USB</p>
+    <p>Use <a href="https://etcher.balena.io/" target="_blank" rel="noopener">balenaEtcher</a> (Windows/Mac/Linux) or <code>dd</code> on Linux/Mac:</p>
+    <pre><code>sudo dd if=kali-linux-2026.X-installer-amd64.iso of=/dev/sdX bs=4M status=progress conv=fsync</code></pre>
+    <div class="note"><strong>Double-check <code>/dev/sdX</code></strong> with <code>lsblk</code> first — the wrong device here wipes it.</div>
+
+    <p class="sub">Install</p>
+    <p>Boot from the USB, choose "Graphical Install," and follow the prompts (disk partitioning, user account, etc.). Defaults are fine for a learning setup. Once it reboots into Kali, update everything before touching drivers:</p>
+    <pre><code>sudo apt update && sudo apt full-upgrade -y
+sudo reboot</code></pre>
+  </section>
+
+  <section class="step">
+    <h2><span class="num">STEP 3</span> Install the RTL8812AU driver</h2>
+    <p class="lede">This is the step that actually causes most people's "my adapter won't go into monitor mode" problems.</p>
+
+    <p>Plug in the AWUS036ACH and check if Linux sees it at all:</p>
+    <pre><code>lsusb</code></pre>
+    <p>You should see a line mentioning <code>Realtek</code> or <code>RTL8812AU</code>. If nothing shows up, try a different USB port (preferably USB 3.0, plugged directly in — not through a hub).</p>
+
+    <p class="sub">Why you need a separate driver</p>
+    <p>Kali's kernel sometimes includes a partial in-tree driver for this chipset that can handle basic WiFi but doesn't support monitor mode or injection properly. The driver maintained by the aircrack-ng project fixes this.</p>
+
+    <p class="sub">Install build dependencies</p>
+    <pre><code>sudo apt update
+sudo apt install -y build-essential dkms git libelf-dev linux-headers-$(uname -r)</code></pre>
+
+    <p class="sub">Clone and install the driver</p>
+    <pre><code>git clone https://github.com/aircrack-ng/rtl8812au.git
+cd rtl8812au
+sudo make dkms_install</code></pre>
+    <p>This builds the driver via DKMS, which means it automatically rebuilds itself after future kernel updates — important, because this is the single most common reason the driver "stops working" a few weeks later.</p>
+
+    <p class="sub">Reboot and recheck</p>
+    <pre><code>sudo reboot</code></pre>
+    <p>After reboot, confirm the interface shows up:</p>
+    <pre><code>iwconfig</code></pre>
+    <p>You should see an interface like <code>wlan0</code> or <code>wlan1</code> listed alongside your other network interfaces.</p>
+
+    <div class="note">
+      <strong>If the driver build fails:</strong> it's almost always a kernel header mismatch. Run <code>uname -r</code> and confirm <code>linux-headers-$(uname -r)</code> actually installed a matching version — check with <code>dpkg -l | grep linux-headers</code>. A fresh <code>apt full-upgrade</code> followed by a reboot before reinstalling the driver fixes most of these cases.
+    </div>
+  </section>
+
+  <section class="step">
+    <h2><span class="num">STEP 4</span> Verify monitor mode and injection</h2>
+    <p class="lede">Confirm the setup actually works before you rely on it for anything.</p>
+
+    <p class="sub">Check for interfering processes</p>
+    <pre><code>sudo airmon-ng check</code></pre>
+    <p>If it lists processes like <code>NetworkManager</code> or <code>wpa_supplicant</code> that could interfere, kill them:</p>
+    <pre><code>sudo airmon-ng check kill</code></pre>
+
+    <p class="sub">Enable monitor mode</p>
+    <pre><code>sudo airmon-ng start wlan0</code></pre>
+    <p>(Replace <code>wlan0</code> with whatever <code>iwconfig</code> showed for your adapter.) This typically creates a new interface, often named <code>wlan0mon</code>. Confirm it:</p>
+    <pre><code>iwconfig</code></pre>
+    <p>You should see <code>Mode:Monitor</code> on the new interface.</p>
+
+    <p class="sub">Confirm you can see traffic</p>
+    <pre><code>sudo airodump-ng wlan0mon</code></pre>
+    <p>If this lists nearby networks (yours and visible neighbors, which is normal and passive — you're just listening, not connecting), monitor mode is working. Press <code>Ctrl+C</code> to stop.</p>
+
+    <p class="sub">Test packet injection</p>
+    <pre><code>sudo aireplay-ng --test wlan0mon</code></pre>
+    <p>A healthy result reports injection working with a reasonable success percentage against nearby access points. If it reports 0% or fails outright against every AP, the driver or adapter isn't injecting properly — revisit Step 3 before going further.</p>
+
+    <ul class="checklist">
+      <li>Adapter shows up in <code>lsusb</code></li>
+      <li>Interface appears in <code>iwconfig</code></li>
+      <li>Monitor mode interface created successfully</li>
+      <li><code>airodump-ng</code> shows nearby networks</li>
+      <li><code>aireplay-ng --test</code> reports successful injection</li>
+    </ul>
+    <p>If all five check out, your hardware and driver setup is solid.</p>
+  </section>
+
+  <div class="handoff">
+    <h2>From here: auditing your own network's password strength</h2>
+    <p>With monitor mode and injection confirmed working, the next stage — capturing a WPA/WPA2 handshake from your own router and testing it against a wordlist — is a well-documented, versioned workflow that changes syntax across tool updates. Rather than a static write-up here, use the actively maintained official reference:</p>
+    <div class="link-box">
+      <a href="https://aircrack-ng.org/documentation.html" target="_blank" rel="noopener">aircrack-ng.org/documentation.html</a>
+    </div>
+    <p style="margin-top:14px;">A few things worth knowing going in:</p>
+    <ol>
+      <li>Only run this against networks you own or have explicit written permission to test.</li>
+      <li>If your router supports WPA3, this handshake-capture method largely doesn't apply — WPA3's SAE handshake resists this style of offline attack.</li>
+      <li>If WPS is enabled on your router, that's often a separate and more significant weak point than the password itself — worth checking and disabling regardless.</li>
+      <li>A password that survives a decent wordlist for more than a few hours on consumer hardware is doing its job. If yours falls in minutes, that's your actionable takeaway: switch to a longer, random passphrase (12+ characters).</li>
+    </ol>
+  </div>
+
+  <footer>
+    Reference only — driver repos and tool syntax change over time; check the linked official sources if anything here looks out of date.
+  </footer>
+
+</div>
+</body>
+</html>
