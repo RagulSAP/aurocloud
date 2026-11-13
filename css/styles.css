@@ -176,7 +176,7 @@ body {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  padding: 1rem 0;
+  padding: .5rem 0;
   transition: var(--transition);
 }
 .nav.scrolled {
@@ -184,7 +184,7 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--clr-border);
-  padding: .75rem 0;
+  padding: .5rem 0;
 }
 .nav-inner {
   display: flex;
@@ -203,7 +203,7 @@ body {
   letter-spacing: -.01em;
 }
 .logo-banner {
-  height: 36px;
+  height: 80px;
   width: auto;
   display: block;
 }
